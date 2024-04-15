@@ -1,0 +1,191 @@
+body{
+	font-family: sans-serif;
+	height: 100vh; /* height ကို အလယ် center ကျစေချင်လို့ height ကို 100vh ထား */
+	background-color: #000;
+
+/*	အလယ် center ချ */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+
+/* container ကို ဘောင်ဖွဲ့လိုက်ခြင်း သဘော */
+.container{
+	width: 480px; 
+	height: auto;
+	border-radius: 20px;/* visacard မှာ အစွန်းပေါ်နေလို့ container မှာ border-radius ပေး */
+/*	background: linear-gradient(#000,#333);*/
+	background: linear-gradient(360deg,#000,#333)/* 4 အထက် အောက် ဖြစ်စေချင်လျု့ 360 DEG နဲ့ လှည့်*/
+}
+
+
+
+/*container ထဲက cardside ကို ဘောင် ခတ် မယ်*/
+.visacard{
+	width: 100%; /* visacard ကို သူ့ရဲ့ parent ဖစ်တဲ့ container က အတိုင်း with အပြည့် ဖစိချင်လို့ 100% ပေးခြင်းဖြစ်။ */
+	height: 260px;
+/*1	background-color: steelblue; steelblue color က container မှာ ပေးထားတဲ့ အရောင်ကို ကွယ်သွားပြီ။*/
+/*2	background-color: rgba(255, 255, 255, 1); ဒီလိုဆိုရင် အရမ်း ဖြူသွားလိမ့်မယ်။*/
+/*3*/background-color: rgba(255, 255, 255, .1); /* အရောင် ဖျော့ချင်လို့ rgba() မှာ .1 နဲ့လျှော့ထား လိုက်တယ်။*/
+	backdrop-filter: blur(30px);/* ပုံတွေဘာတွေ မှုန်ချင်ရင် သုံး ။ value များလေ blur လေ */
+	border: 2px solid rgba(255, 25 5, 255, 0.1); /* border အပါး လေးထည့်။*/
+	box-shadow: 0 0 50px rgba(0, 0, 255, 0.3); /* box-shadow ထည့်*/
+	padding: 35px; /* စာနဲ့ အရမ်းကပ်နေလို့ padding ကန် */
+	border-radius: 20px;
+}
+
+
+.logo .visaLogo{
+	width: 100px;
+	padding-bottom: 20px; /* logo နဲ့ အရမ်းကပ်နေလို့ padding-bottom ကန် ။ margin နဲ့ လည်း ကန်လို့ ရသည်။ */
+	opacity: .9; /* visa log အရောင်တောက်နေလို့ opacity: .9 နဲ့ လျော့ထား ၊ deafault က 1 */
+}
+ 
+
+.form-group{
+	display: flex; /*form-group ထဲက div သု့းခု ကို ဘေးတိုက်ယှဉ် တွဲ ဖော်ပြချင်လို့ display ကို flex*/
+}
+
+
+label{
+	display: block;
+	color: #fff;
+	padding-bottom: 2px;
+}
+
+
+.form-control{
+	height: 20px;
+	background: none; /* input box ကို ဖျောက်ချင်လို့။ */
+	color: #fff;/* cursor ထောက်ရင် သိသာအောင်*/
+	border: none;
+	font-size: 14px;
+}
+
+
+/* form-control မှာ coursor ချ လိုက်ရင် outline တွေ ပေါ်နေလို့ ဖျောက်မယ်။ sudo clsss*/
+.form-control:focus{
+	outline: none;
+}
+
+
+/* palceholder ကို ထင်းထင်းလေး လုပ်မယ်။ sudo element*/
+.form-control::placeholder{
+	color: #bbb;
+}
+
+
+.card-number{
+	margin-bottom: 30px;
+
+	position: relative;
+
+	overflow: hidden; /* cardnumber အောက်က underlline ဖျောက်ချင်လို့ parent ဖစ်တဲ့ card-number မှာ overflow ကို hidden ပေး။ */
+}
+
+
+/* attribute selector နဲ့ input ထဲက အကောင် ကို လှမ်းခေါ် */
+input[id="card-digit"]{
+	width: 100%;
+	height: 50px;
+	font-size: 30px;
+}
+
+
+
+
+/* under line ကို ဒီနည်းနဲ့လည်း ရေးလို့ရတယ်။ */
+/* ဒါပေမယ့် ဘက်ခနဲ underline ပေါ်လာ လို့ မသုံး */
+
+/*input[id="card-digit"]:hover{
+	border-bottom: 2px solid #fff; 
+}*/
+
+
+
+
+
+
+.underline{
+	
+	width: 100%;/* card-number ရဲ့ width အတိုင်း ပေါ်ချင်လို့ 100% ပေး */
+	height: 2px;
+	background-color: #fff; /* ဒီမှာ underline မပေါ်ရတာဟာ span tag က inline element မို့လို့ စာရွိသလာက္ဘဲ ေပါာ (or) width ယူ */
+
+	position: absolute; /* inline element ဖစ္ေနလိုံ့ */
+	left: -100%; /* underline ကို ရစေချင်လို့ လက်ဝဲ ဘက်ကို ပို့ထားလိုက်တယ်။ */
+	bottom: 0; /* carde-numebr ရဲ ေအာက္မွာ ေရာက္ေစချင်လို့ bottom ကို 0 ပေး။*/
+
+	transition: left .3s ease-in;
+	
+
+}
+
+/* တူညီ တဲ့ လုပ်ဆောင်ချက်ဖြစ်လို့ group selecter နဲ့ cursor ချလိုက်ရင် underline မပျောက်သွားအောင်ပေးလိုက်တယ် */
+.card-number input[id="card-digit"]:hover + .underline, .card-number input[id="card-digit"]:focus + .underline{
+
+	left: 0;
+}
+
+
+.card-holder{
+	width: 50%;
+	padding: 0 80px 0 0;	
+
+	position: relative; /* underline ပေါ်လာအောင် */
+/*	margin-right: 60px; /* caedholder က underlineနဲ့ exp date အရမ်းကပ်နေလို့ margin-right ပေး */
+
+	overflow: hidden; /* cardholder အောက်က underlline ဖျောက်ချင်လို့ parent ဖစ်တဲ့ card-holder မှာ overflow ကို hidden ပေး။ */
+
+}
+
+
+
+input[id="card-name"]{
+	width: 100px;
+	height: 25px;
+}
+
+
+/* pointer တင်ရင် စောစောကလိုဘဲဆိုတော့ copy paste လုပ်ပြီး selector name ပြောင်းလိုက်တယ် */
+.card-holder input[id="card-name"]:hover + .underline, .card-holder input[id="card-name"]:focus + .underline{
+
+	left: 0;
+	
+} 
+
+
+
+.card-date{
+	width: 90px;
+	padding: 0;
+	margin-right: 60px;
+
+	position: relative;
+	overflow: hidden;
+}
+
+
+/* pointer တင်ရင် စောစောကလိုဘဲဆိုတော့ copy paste လုပ်ပြီး selector name ပြောင်းလိုက်တယ် */
+.card-date input[id="card-exp"]:hover + .underline, .card-date input[id="card-exp"]:focus + .underline{
+	left: 0;
+	
+} 
+
+
+.card-code{
+	width: 70px;
+	padding: 0;
+
+	position: relative;
+	overflow: hidden;
+}
+
+
+/* pointer တင်ရင် စောစောကလိုဘဲဆိုတော့ copy paste လုပ်ပြီး selector name ပြောင်းလိုက်တယ် */
+.card-code input[id="card-ccv"]:hover + .underline, .card-code input[id="card-ccv"]:focus + .underline{
+	left: 0;
+	
+} 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visa card</title>
+	<link href="./../L16/app.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+	<div class="container">
+		
+		<div class="visacard">
+
+			<!-- input box ပါမယ်ဆိုတော့ form 
+			ပါရမယ် -->
+			<form action="" method="">
+				<div class="logo">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="
+					visaLogo" alt="visalogo">
+				</div>
+
+
+				<div class="card-number">
+					<label for="card-digit">Card Number</label>
+					<input type="text" name="card-digit" id="card-digit" class="form-control" placeholder="1234 1234 1234 1234" maxlength="16" required />
+					<!-- underline အတွက် span tag-->
+					<span class="underline"></span>					
+				</div>
+
+				<br></br>
+				<div class="form-group">
+					<!-- child 3 ခု ခွဲလို့ရအောင် div တစ်ခုထဲမှာထည့် -->
+					<div class="card-holder">
+						<label for="card-name">Card Holder Number</label>
+						<input type="text" name="card-name" id="card-name" class="form-control" placeholder="Your Full name " required />
+						<!-- underline အတွက် span tag-->
+						<span class="underline"></span>
+						
+					</div>
+
+
+					<!-- EXp Date အတွက် Div နောက်တစ်ခု -->
+					<div class="card-date">
+						<label for="card-exp">Exp. Date</label>
+						<input type="text" name="card-exp" id="card-exp" class="form-control" placeholder="12/31" maxlength="5" crequired />
+						<!-- underline အတွက် span tag-->
+						<span class="underline"></span>
+						<br></br>
+					</div>
+
+
+					<!-- card code အတွက် Div နောက်တစ်ခု -->
+					<div class="card-code">
+						<label for="card-ccv">CCV</label>
+						<input type="text" name="card-ccv" id="card-ccv" class="form-control" placeholder="135" maxlength="3" required />
+						<!-- underline အတွက် span tag-->
+						<span class="underline"></span>
+						<br></br>
+					</div>
+				</div>
+
+				
+
+
+
+			</form>
+		</div>
+	</div>
+
+<script scr="./../L16/app.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+
